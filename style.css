@@ -1,0 +1,115 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: #3b3b3b;
+    background-color: #fdf6f0;
+}
+
+a {
+    text-decoration: none;
+    color: #3b3b3b;
+}
+
+h1, h2 {
+    font-weight: bold;
+    color: #3b3b3b;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #3b3b3b;
+    color: white;
+}
+
+.nav a {
+    margin: 0 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav a:hover {
+    color: #c39060;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #c39060;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 10px 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f5efe9;
+}
+
+.about h2 {
+    margin-bottom: 20px;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 50px 20px;
+    background-color: #e7e1db;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    height: 200px;
+    background-color: #3b3b3b;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 20px;
+    background-color: #f5efe9;
+}
+
+.services ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.services li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #3b3b3b;
+    color: white;
+}
+
+.footer a {
+    color: #c39060;
+}
