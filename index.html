@@ -3,24 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Familizz</title>
-    <link rel="stylesheet" href="STYLE/styleprincipal.css">
+    <title>Brand Designer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>FAMILIZZ</h1>
+    <header class="header">
+        <div class="logo">YourLogo</div>
+        <nav class="nav">
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <main>
-        <div class="button-container">
-            <a href="family.html" class="button">Famille Ludo</a>
-            <a href="famille-2.html" class="button">Famille 2</a>
-            <a href="famille-3.html" class="button">Famille 3</a>
+    <section class="hero">
+        <h1>Your Name</h1>
+        <p>Brand Designer & Visual Storyteller</p>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. I design brands that tell compelling stories.</p>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Portfolio</h2>
+        <div class="gallery">
+            <div class="gallery-item">Project 1</div>
+            <div class="gallery-item">Project 2</div>
+            <div class="gallery-item">Project 3</div>
         </div>
-    </main>
-  
-    <footer>
-        <p>&copy; 2024 Site d'Elise PIERRE. Tous droits réservés.</p>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Services</h2>
+        <ul>
+            <li>Brand Identity Design</li>
+            <li>Logo Creation</li>
+            <li>Packaging Design</li>
+        </ul>
+    </section>
+
+    <footer id="contact" class="footer">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+        <p>Follow me on <a href="#">Instagram</a> | <a href="#">LinkedIn</a></p>
     </footer>
 </body>
 </html>
