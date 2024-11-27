@@ -70,6 +70,16 @@ img {
     opacity: 0.5;
 }
 
+/* Redimensionner l'image représentant la personne */
+.profile-image {
+    max-width: 200px; /* Limite la largeur maximale */
+    max-height: 200px; /* Limite la hauteur maximale */
+    border-radius: 50%; /* Donne une forme circulaire à l'image (facultatif) */
+    object-fit: cover; /* Assure que l'image s'adapte sans distorsion */
+    display: block;
+    margin: 0 auto; /* Centre l'image horizontalement */
+}
+
 /* About Section */
 .about {
     padding: 50px 20px;
