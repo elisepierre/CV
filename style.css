@@ -1,10 +1,15 @@
 /* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6;
     margin: 0;
     color: #3b3b3b;
     background-color: #fdf6f0;
+}
+
+h1, h2 {
+    font-weight: bold;
+    color: #3b3b3b;
+    text-align: center;
 }
 
 a {
@@ -12,9 +17,10 @@ a {
     color: #3b3b3b;
 }
 
-h1, h2 {
-    font-weight: bold;
-    color: #3b3b3b;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Header */
@@ -27,10 +33,15 @@ h1, h2 {
     color: white;
 }
 
+.logo-img {
+    max-height: 50px;
+}
+
 .nav a {
     margin: 0 15px;
-    font-size: 14px;
     text-transform: uppercase;
+    font-size: 14px;
+    color: white;
 }
 
 .nav a:hover {
@@ -39,30 +50,40 @@ h1, h2 {
 
 /* Hero Section */
 .hero {
+    position: relative;
     text-align: center;
     padding: 100px 20px;
     background-color: #c39060;
     color: white;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin: 10px 0;
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
-.hero p {
-    font-size: 1.2rem;
+.hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-height: 400px;
+    opacity: 0.5;
 }
 
 /* About Section */
 .about {
     padding: 50px 20px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 20px;
     background-color: #f5efe9;
 }
 
-.about h2 {
-    margin-bottom: 20px;
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 /* Portfolio Section */
@@ -78,38 +99,67 @@ h1, h2 {
 }
 
 .gallery-item {
-    height: 200px;
-    background-color: #3b3b3b;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5);
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 5px 10px;
 }
 
 /* Services Section */
 .services {
     padding: 50px 20px;
     background-color: #f5efe9;
+    text-align: center;
 }
 
-.services ul {
-    list-style-type: none;
-    padding: 0;
+.services-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.services li {
-    margin: 10px 0;
-    font-size: 1.1rem;
+.service {
+    flex: 1;
+    max-width: 300px;
+    padding: 20px;
+}
+
+.service i {
+    font-size: 3rem;
+    color: #c39060;
+    margin-bottom: 10px;
 }
 
 /* Footer */
 .footer {
     padding: 30px 20px;
-    text-align: center;
     background-color: #3b3b3b;
+    color: white;
+    text-align: center;
+}
+
+.socials a {
+    margin: 0 10px;
+    font-size: 1.5rem;
     color: white;
 }
 
-.footer a {
+.socials a:hover {
     color: #c39060;
 }
