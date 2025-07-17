@@ -261,7 +261,7 @@ header nav a:hover {
 }
 
 .window-header {
-  background-color: #d1d1d1;
+  background-color: var(--bg);
   padding: 10px;
   font-weight: bold;
   border-radius: 6px;
@@ -287,7 +287,7 @@ header nav a:hover {
 
 .folder i {
   font-size: 3rem;
-  color: #ffcc00;
+  color: var(--primary);
 }
 
 .folder:hover {
