@@ -253,7 +253,7 @@ header nav a:hover {
 /* PROJECTS - FENÊTRE ORDI */
 
 .computer-window {
-  background-color: #eaeaea;
+  background-color: #edeff2;
   border: 2px solid #ccc;
   border-radius: 8px;
   padding: 20px;
@@ -261,7 +261,7 @@ header nav a:hover {
 }
 
 .window-header {
-  background-color: var(--bg);
+  background-color: #d3d5db;
   padding: 10px;
   font-weight: bold;
   border-radius: 6px;
