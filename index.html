@@ -69,5 +69,23 @@
             <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
         </div>
     </footer>
+
+<script>
+    function openExperienceModal(id) {
+        const modal = document.getElementById("experience-modal");
+        const content = {
+            exp1: `<h3>Développeuse Frontend - Webcorp</h3><p>Développement d'interfaces modernes avec React, gestion de version Git, travail en Agile.</p><p><strong>Période :</strong> Avril - Août 2024</p>`,
+            exp2: `<h3>Assistante Chef de Projet - Innovatech</h3><p>Suivi de projet, rédaction de cahiers des charges, coordination avec l'équipe dev.</p><p><strong>Période :</strong> Janvier - Mars 2024</p>`,
+            exp3: `<h3>Stagiaire UX Design - SoftLab</h3><p>Prototypage Figma, tests utilisateurs, veille design UX/UI.</p><p><strong>Période :</strong> Juillet - Août 2023</p>`
+        };
+        document.getElementById("modal-text").innerHTML = content[id] || "<p>Information non disponible.</p>";
+        modal.style.display = "flex";
+    }
+
+    function closeExperienceModal() {
+        document.getElementById("experience-modal").style.display = "none";
+    }
+</script>
+
 </body>
 </html>
