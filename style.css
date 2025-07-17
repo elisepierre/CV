@@ -127,7 +127,7 @@ header nav a:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* EXPERIENCE CAROUSEL */
+/* EXPERIENCE FLIP CARDS */
 
 .experience-section {
   padding: 80px 20px;
@@ -155,22 +155,49 @@ header nav a:hover {
   display: none;
 }
 
-.experience-item {
+.flip-card {
   flex: 0 0 250px;
+  min-height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   background-color: var(--white);
   border-radius: var(--radius);
   padding: 20px;
-  text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: var(--transition);
-  scroll-snap-align: start;
-  cursor: pointer;
-  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.experience-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+.flip-front {
+  z-index: 2;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  color: var(--text);
 }
 
 .experience-title {
@@ -223,6 +250,74 @@ header nav a:hover {
   right: -20px;
 }
 
+/* PROJECTS - FENÊTRE ORDI */
+
+.computer-window {
+  background-color: #eaeaea;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.window-header {
+  background-color: #d1d1d1;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.folder-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.folder {
+  width: 120px;
+  text-align: center;
+  color: var(--text);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.folder i {
+  font-size: 3rem;
+  color: #ffcc00;
+}
+
+.folder:hover {
+  transform: scale(1.05);
+}
+
+.project-details {
+  display: none;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.project-details h3 {
+  margin-bottom: 10px;
+}
+
+.project-details a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-details a:hover {
+  text-decoration: underline;
+}
+
 /* FOOTER */
 
 .footer {
@@ -245,6 +340,10 @@ header nav a:hover {
   font-size: 1.5rem;
   color: var(--text);
   transition: var(--transition);
+}
+
+.footer a:hover {
+  color: var(--primary);
 }
 
 .footer a:hover {
