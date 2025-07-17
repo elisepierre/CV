@@ -1,216 +1,297 @@
-/* style.css */
+:root {
+  --primary: #7a5af5;
+  --bg: #f8f9fc;
+  --text: #2d2d2d;
+  --muted: #6c757d;
+  --white: #ffffff;
+  --radius: 12px;
+  --transition: all 0.3s ease;
+}
 
-/* Police Inter depuis Google Fonts (à inclure dans le HTML) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-h1, h2, h3 {
-  font-weight: 800;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-nav a {
-  margin-left: 1.5rem;
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #0077cc;
-}
-
-.hero {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.cta-btn {
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  background-color: #0077cc;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  margin-top: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.cta-btn:hover {
-  background-color: #005fa3;
-}
-
-.section {
-  padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.profile-pic {
-  width: 120px;
-  border-radius: 50%;
-  display: block;
-  margin: 1rem auto;
-}
-
-.experience-section {
-  background-color: #f0f4f8;
-}
-
-.experience-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.experience-slider {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding: 2rem 1rem;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
   scroll-behavior: smooth;
 }
 
-/* Animation fade-in + translation */
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* HEADER */
+
+header {
+  background: var(--white);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Cartes d’expérience */
-.experience-item {
-  min-width: 220px;
-  perspective: 1000px;
-  animation: fadeSlideIn 0.6s ease forwards;
-  opacity: 0;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+header nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  transition: var(--transition);
 }
 
-/* Décalage animation selon l’ordre */
-.experience-item:nth-child(1) { animation-delay: 0.1s; }
-.experience-item:nth-child(2) { animation-delay: 0.2s; }
-.experience-item:nth-child(3) { animation-delay: 0.3s; }
-.experience-item:nth-child(4) { animation-delay: 0.4s; }
-.experience-item:nth-child(5) { animation-delay: 0.5s; }
-.experience-item:nth-child(6) { animation-delay: 0.6s; }
-
-/* Ombre et léger levé au hover */
-.experience-item:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  transform: translateY(-3px);
-  cursor: pointer;
+header nav a:hover {
+  color: var(--primary);
 }
 
-/* Flip card container */
-.flip-inner {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+.logo-img {
+  height: 40px;
 }
 
-/* Quand la carte est flipée */
-.flip-card.flipped .flip-inner {
-  transform: rotateY(180deg);
-}
+/* HERO */
 
-/* Faces avant et arrière */
-.flip-front, .flip-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background: white;
-  border-radius: 1rem;
-  padding: 1rem;
+.hero {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+  color: var(--white);
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--white);
+  color: var(--primary);
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cta-btn:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* SECTIONS GÉNÉRALES */
+
+.section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* ABOUT */
+
+.about p {
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* EXPERIENCE FLIP CARDS */
+
+.experience-section {
+  padding: 80px 20px;
+  background-color: var(--bg);
+  text-align: center;
+}
+
+.experience-container {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.experience-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 20px;
+  padding: 20px 0;
+  scrollbar-width: none;
+}
+
+.experience-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.flip-card {
+  flex: 0 0 250px;
+  min-height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-front {
+  z-index: 2;
 }
 
 .flip-back {
   transform: rotateY(180deg);
-  background-color: #eaf3fb;
+  color: var(--text);
 }
 
-/* Titres et logos dans expérience */
 .experience-title {
+  font-weight: bold;
   font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.experience-logo {
-  height: 80px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
 }
 
 .experience-company {
   font-size: 0.95rem;
-  color: #777;
+  color: var(--muted);
 }
 
-/* Style dossiers projets */
-.folder {
-  animation: fadeSlideIn 0.5s ease forwards;
-  opacity: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 200px;
-  height: 200px;
-  background-color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #0077cc;
+.experience-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin: 10px 0;
+}
+
+/* ARROWS */
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--white);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  user-select: none;
+  font-size: 1.5rem;
+  color: var(--text);
+  transition: var(--transition);
+  z-index: 10;
+}
+
+.arrow:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.arrow-left {
+  left: -20px;
+}
+
+.arrow-right {
+  right: -20px;
+}
+
+/* PROJECTS - FENÊTRE ORDI */
+
+.computer-window {
+  background-color: #eaeaea;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.window-header {
+  background-color: #d1d1d1;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.folder-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.folder {
+  width: 120px;
+  text-align: center;
+  color: var(--text);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.folder i {
+  font-size: 3rem;
+  color: #ffcc00;
 }
 
 .folder:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-}
-
-/* Pour forcer les cartes visibles après animation (en JS) */
-.experience-item.visible, .folder.visible {
-  opacity: 1 !important;
+  transform: scale(1.05);
 }
 
 .project-details {
