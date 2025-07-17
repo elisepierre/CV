@@ -11,36 +11,43 @@ const experiences = [
     titre: "Agente de service",
     entreprise: "Papillotte et Cie",
     logo: "LOGO/papillotte_et_cie.png",
-    periode: "Hiver 2021",
-    description: "Préparation des repas, service à domicile."
+    periode: "Été 2023",
+    description: "Service des repas, ménage."
   },
   {
     titre: "Tutrice étudiants internationaux",
     entreprise: "ISIMA - INP Clermont Auvergne",
     logo: "LOGO/isima.png",
-    periode: "2023-2024",
-    description: "Accompagnement des étudiants étrangers dans leur intégration."
+    periode: "septembre 2023 - mai 2024",
+    description: "Accompagnement des étudiants internationaux dans leur intégration."
+  },
+  {
+    titre: "Présidente du BDE (Bureau Des Etudiants)",
+    entreprise: "AEI ISIMA",
+    logo: "LOGO/bde.png",
+    periode: "février 2024 - février 2025",
+    description: "Management d'une équipe de 15 personnes, organisation des événements étudiants, intégration des nouveaux élèves."
   },
   {
     titre: "Enseignante à domicile",
     entreprise: "Complétude",
     logo: "LOGO/completude.png",
-    periode: "Depuis 2024",
-    description: "Soutien scolaire niveau lycée en maths et physique."
+    periode: "Mars 2024 - Juin 2025",
+    description: "Soutien scolaire niveau lycée en mathématiques."
   },
   {
     titre: "Agente à domicile",
     entreprise: "Daphné",
     logo: "LOGO/daphne.png",
-    periode: "2023",
+    periode: "Été 2024",
     description: "Aide aux personnes âgées : courses, repas, ménage."
   },
   {
     titre: "Employée polyvalente",
     entreprise: "Les Filous",
     logo: "LOGO/filous.png",
-    periode: "Week-ends 2025",
-    description: "Préparation, accueil client, encaissement en street food grecque."
+    periode: "Depuis mars 2025",
+    description: "Préparation des commandes, accueil client, encaissement."
   }
 ];
 
