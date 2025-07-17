@@ -37,75 +37,54 @@
     <p>Passionnée par la tech et le design, je conçois des projets numériques impactants et créatifs avec une forte exigence esthétique.</p>
   </section>
 
-  <!-- Experience Carousel -->
+  <!-- Expérience dynamique -->
   <section id="experience" class="experience-section">
     <h2>Expérience</h2>
     <div class="experience-container">
       <button class="arrow arrow-left" onclick="scrollCarousel(-1)">&#10094;</button>
       <div class="experience-slider" id="experience-slider">
-        <div class="experience-item">
-          <div class="experience-title">Employée clientèle</div>
-          <img src="LOGO/irigo.png" alt="Logo Irigo" class="experience-logo"/>
-          <div class="experience-company">Irigo</div>
-        </div>
-        <div class="experience-item">
-          <div class="experience-title">Agente de service</div>
-          <img src="LOGO/papillotte_et_cie.png" alt="Logo Papillotte et cie" class="experience-logo"/>
-          <div class="experience-company">Papillotte et compagnie</div>
-        </div>
-        <div class="experience-item">
-          <div class="experience-title">Tutrice des étudiants internationaux</div>
-          <img src="LOGO/isima.png" alt="Logo Isima" class="experience-logo"/>
-          <div class="experience-company">ISIMA - INP Clermont Auvergne</div>
-        </div>
-        <div class="experience-item">
-          <div class="experience-title">Enseignante à domicile</div>
-          <img src="LOGO/completude.png" alt="Logo Complétude" class="experience-logo"/>
-          <div class="experience-company">Complétude - soutien scolaire</div>
-        </div>
-        <div class="experience-item">
-          <div class="experience-title">Agente à domicile</div>
-          <img src="LOGO/daphne.png" alt="Logo Daphné" class="experience-logo"/>
-          <div class="experience-company">Daphné - accompagnement à domicile</div>
-        </div>
-        <div class="experience-item">
-          <div class="experience-title">Employée polyvalente</div>
-          <img src="LOGO/filous.png" alt="Logo Les Filous" class="experience-logo"/>
-          <div class="experience-company">Les Filous - street food grecque</div>
-        </div>
+        <!-- Cartes générées automatiquement ici -->
       </div>
       <button class="arrow arrow-right" onclick="scrollCarousel(1)">&#10095;</button>
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Projets -->
   <section id="projects" class="section">
-        <h2>Projets récents</h2>
-        <p style="text-align: center;">Une section portfolio épurée peut venir ici avec des images stylisées et un texte court pour chaque projet.</p>
+    <h2>Projets récents</h2>
+    <div class="computer-window">
+      <div class="window-header">Dossier Projets</div>
+      <div class="folder-grid">
+        <div class="folder" onclick="openProject('project1')">
+          <i class="fas fa-folder"></i>
+          <span>Portfolio</span>
+        </div>
+        <div class="folder" onclick="openProject('project2')">
+          <i class="fas fa-folder"></i>
+          <span>Jeu de drague</span>
+        </div>
+      </div>
+      <div class="project-details" id="project-details">
+        <h3 id="project-title">Titre</h3>
+        <p><strong>Date :</strong> <span id="project-date">Date</span></p>
+        <p id="project-summary">Résumé...</p>
+        <a id="project-link" href="#" target="_blank">Voir le projet</a>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer id="contact" class="footer">
     <h2>Contact</h2>
-    <p>Email : <a href="mailto:elise-pierre@outlook.com">elise-pierre@outlook.com</a></p>
+    <p>Email : <a href="mailto:elise-pierre@outlook.com" target="_blank" rel="noopener noreferrer">elise-pierre@outlook.com</a></p>
     <div class="socials">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-behance"></i></a>
+      <a href="https://www.instagram.com/toncompte" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/tonprofil" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.behance.net/tonbehance" target="_blank" rel="noopener noreferrer"><i class="fab fa-behance"></i></a>
     </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-    function scrollCarousel(direction) {
-      const container = document.getElementById('experience-slider');
-      const scrollAmount = 300;
-      container.scrollBy({
-        left: direction * scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  </script>
-
+  <!-- JavaScript externe -->
+  <script src="script.js"></script>
 </body>
 </html>
