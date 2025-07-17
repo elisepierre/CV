@@ -137,7 +137,7 @@ header nav a:hover {
     color: var(--primary);
 }
 
-        .experience-slider {
+.experience-slider {
     display: flex;
     overflow-x: auto;
     gap: 20px;
