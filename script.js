@@ -64,6 +64,13 @@ experiences.forEach(exp => {
     </div>
   `;
   container.appendChild(card);
+
+  // Active l’animation en rendant les cartes visibles
+  setTimeout(() => {
+    document.querySelectorAll('.experience-item').forEach(card => {
+      card.style.opacity = '1';
+    });
+  }, 100); 
 });
 
 // Effet flip au clic
