@@ -97,6 +97,68 @@ function scrollCarousel(direction) {
   });
 }
 
+const educationData = [
+  {
+    date: "2021 - Présent",
+    title: "Cycle ingénieur",
+    school: "ISIMA - Clermont-Ferrand",
+    details: [
+      "Spécialité informatique et réseaux",
+      "Projets web interactifs, IA, et gestion d'équipe",
+      "Compétences : C, Python, HTML/CSS/JS, gestion de projet, UI/UX"
+    ]
+  },
+  {
+    date: "2019 - 2021",
+    title: "Classe Prépa MPSI / MP",
+    school: "Lycée Clémenceau - Nantes",
+    details: [
+      "Maths, Physique, Informatique théorique",
+      "Développement d'autonomie et rigueur",
+      "Compétences : raisonnement logique, travail intensif, analyse"
+    ]
+  },
+  {
+    date: "2019",
+    title: "Baccalauréat Scientifique",
+    school: "Mention Très Bien",
+    details: [
+      "Spécialité Mathématiques",
+      "Engagement dans des activités associatives",
+      "Premiers projets de design (Canva, blogs)"
+    ]
+  }
+];
+
+const timelineContainer = document.querySelector(".edu-timeline");
+const titleEl = document.getElementById("edu-title");
+const schoolEl = document.getElementById("edu-school");
+const listEl = document.getElementById("edu-details-list");
+
+// Génération des points de timeline
+educationData.forEach((item, index) => {
+  const btn = document.createElement("button");
+  btn.title = item.date;
+  btn.addEventListener("click", () => showEducationDetails(index));
+  timelineContainer.appendChild(btn);
+});
+
+function showEducationDetails(index) {
+  const data = educationData[index];
+  titleEl.textContent = `${data.date} — ${data.title}`;
+  schoolEl.textContent = data.school;
+  listEl.innerHTML = "";
+  data.details.forEach(line => {
+    const li = document.createElement("li");
+    li.textContent = line;
+    listEl.appendChild(li);
+  });
+}
+
+// Affiche le premier par défaut
+showEducationDetails(0);
+
+
 // Projets
 const projects = {
   project1: {
