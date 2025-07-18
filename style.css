@@ -121,14 +121,26 @@ header nav a:hover {
   margin: auto;
 }
 
-.profile-pic {
-  width: 150px;
-  height: 150px;
+.profile-pic .photo {
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   object-fit: cover;
   margin: 20px auto;
   display: block;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hover-photo {
+    opacity: 0; /* L'image alternative est invisible par défaut */
+}
+
+.profile-image:hover .normal-photo {
+    opacity: 0; /* Image normale disparaît au survol */
+}
+
+.profile-image:hover .hover-photo {
+    opacity: 1; /* Image alternative apparaît au survol */
 }
 
 /* EXPERIENCE FLIP CARDS */
