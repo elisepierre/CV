@@ -263,6 +263,59 @@ header nav a:hover {
   right: -20px;
 }
 
+.edu-timeline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.edu-timeline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #ccc;
+  z-index: 0;
+}
+
+.edu-timeline button {
+  position: relative;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  background: var(--primary, #7a5af5);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.edu-timeline button:hover {
+  transform: scale(1.2);
+}
+
+.edu-details {
+  margin-top: 30px;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* PROJECTS - FENÊTRE ORDI */
 
 .computer-window {
