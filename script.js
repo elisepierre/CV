@@ -143,26 +143,26 @@ const previewBox = document.getElementById("edu-preview");
 const previewTitle = document.getElementById("edu-hover-title");
 const previewLogo = document.getElementById("edu-logo");
 
-// Génération des points
+const buttons = []; // Nouveau : stocke tous les boutons
+
 educationData.forEach((item, index) => {
   const btn = document.createElement("button");
   btn.title = item.date;
 
-  // Click => Afficher infos
   btn.addEventListener("click", () => {
+    // Ajoute/retire la classe 'selected'
+    buttons.forEach(b => b.classList.remove("selected"));
+    btn.classList.add("selected");
+
     showEducationDetails(index);
   });
 
-  // Hover => Afficher preview
-  btn.addEventListener("mouseenter", (e) => {
+  // Gestion hover comme avant
+  btn.addEventListener("mouseenter", () => {
     previewTitle.textContent = item.title;
     previewLogo.src = item.logo;
     previewLogo.alt = item.school;
     previewBox.style.display = "flex";
-
-    const btnRect = btn.getBoundingClientRect();
-    const timelineRect = timelineContainer.getBoundingClientRect();
-
     previewBox.style.left = `${btn.offsetLeft}px`;
   });
 
@@ -171,6 +171,7 @@ educationData.forEach((item, index) => {
   });
 
   timelineContainer.appendChild(btn);
+  buttons.push(btn); // Ajoute au tableau
 });
 
 function showEducationDetails(index) {
