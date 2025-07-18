@@ -1,5 +1,6 @@
 :root {
   --primary: #7a5af5;
+  --secondary: #e3b8dc;
   --bg: #f8f9fc;
   --text: #2d2d2d;
   --muted: #6c757d;
@@ -304,6 +305,13 @@ header nav a:hover {
   border-radius: 50%;
   cursor: pointer;
   transition: transform 0.2s ease;
+}
+
+.edu-timeline button.selected {
+  background-color: var(--secondary); /* ou une couleur qui ressort */
+  transform: scale(1.4);
+  border: 3px solid var(--white);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 .edu-timeline button:hover {
