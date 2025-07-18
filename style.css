@@ -345,9 +345,10 @@ header nav a:hover {
   height: 40px !important;
   object-fit: contain;
   border-radius: 4px;
+  border: 2px solid red; /* ajout temporaire */
+  background-color: yellow; /* visible même si image absente */
   background: white;
 }
-
 
 .edu-preview span {
   font-size: 0.9rem;
