@@ -146,10 +146,12 @@ header nav a:hover {
 }
 
 .experience-slider {
+  width: 960px;
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  justify-content: center;
   gap: 20px;
   padding: 20px 0;
   scrollbar-width: none;
@@ -161,8 +163,10 @@ header nav a:hover {
 
 .experience-item {
   flex: 0 0 300px;
+  width: 300px;
   height: 300px;
   perspective: 1000px;
+  flex-shrink: 0;
   position: relative;
   transition: transform 0.3s ease, filter 0.3s ease;
   cursor: pointer;
