@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="CV interactif d'Élise Pierre, étudiante en informatique passionnée de design et de technologie." />
   <title>CV Elise Pierre</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -18,6 +19,7 @@
     <nav>
       <a href="#about">À propos</a>
       <a href="#experience">Expérience</a>
+      <a href="#education">Éducation</a>
       <a href="#projects">Projets</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -27,7 +29,8 @@
   <section class="hero">
     <h1>Elise PIERRE</h1>
     <p>Étudiante en école d’ingénieur en informatique</p>
-    <button class="cta-btn">Voir mon travail</button>
+    <button class="cta-btn" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">Voir mon travail</button>
+    <a href="cv-elise-pierre.pdf" class="cta-btn" download>Télécharger mon CV</a>
   </section>
 
   <!-- About -->
@@ -37,8 +40,8 @@
     <p>Passionnée par la tech et le design, je conçois des projets numériques impactants et créatifs avec une forte exigence esthétique.</p>
   </section>
 
-  <!-- Expérience dynamique -->
-  <section id="experience" class="experience-section">
+  <!-- Expérience -->
+  <section id="experience" class="experience-section section">
     <h2>Expérience</h2>
     <div class="experience-container">
       <button class="arrow arrow-left" onclick="scrollCarousel(-1)">&#10094;</button>
@@ -46,6 +49,25 @@
         <!-- Cartes générées automatiquement ici -->
       </div>
       <button class="arrow arrow-right" onclick="scrollCarousel(1)">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Éducation -->
+  <section id="education" class="section">
+    <h2>Éducation</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>2021 - Présent</h3>
+        <p>ISIMA - École d'ingénieurs en informatique</p>
+      </div>
+      <div class="timeline-item">
+        <h3>2019 - 2021</h3>
+        <p>CPGE MPSI/MP - Lycée Clémenceau, Nantes</p>
+      </div>
+      <div class="timeline-item">
+        <h3>2019</h3>
+        <p>Baccalauréat Scientifique - Mention TB</p>
+      </div>
     </div>
   </section>
 
@@ -87,3 +109,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
