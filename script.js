@@ -102,6 +102,7 @@ const educationData = [
     date: "2021 - Présent",
     title: "Cycle ingénieur",
     school: "ISIMA - Clermont-Ferrand",
+    logo: "img/isima.png", // Chemin vers l'image du logo
     details: [
       "Spécialité informatique et réseaux",
       "Projets web interactifs, IA, et gestion d'équipe",
@@ -112,6 +113,7 @@ const educationData = [
     date: "2019 - 2021",
     title: "Classe Prépa MPSI / MP",
     school: "Lycée Clémenceau - Nantes",
+    logo: "img/clemenceau.png",
     details: [
       "Maths, Physique, Informatique théorique",
       "Développement d'autonomie et rigueur",
@@ -122,6 +124,7 @@ const educationData = [
     date: "2019",
     title: "Baccalauréat Scientifique",
     school: "Mention Très Bien",
+    logo: "img/bac.png",
     details: [
       "Spécialité Mathématiques",
       "Engagement dans des activités associatives",
@@ -134,12 +137,39 @@ const timelineContainer = document.querySelector(".edu-timeline");
 const titleEl = document.getElementById("edu-title");
 const schoolEl = document.getElementById("edu-school");
 const listEl = document.getElementById("edu-details-list");
+const eduDetails = document.querySelector(".edu-details");
 
-// Génération des points de timeline
+const previewBox = document.getElementById("edu-preview");
+const previewTitle = document.getElementById("edu-hover-title");
+const previewLogo = document.getElementById("edu-logo");
+
+// Génération des points
 educationData.forEach((item, index) => {
   const btn = document.createElement("button");
   btn.title = item.date;
-  btn.addEventListener("click", () => showEducationDetails(index));
+
+  // Click => Afficher infos
+  btn.addEventListener("click", () => {
+    showEducationDetails(index);
+  });
+
+  // Hover => Afficher preview
+  btn.addEventListener("mouseenter", (e) => {
+    previewTitle.textContent = item.title;
+    previewLogo.src = item.logo;
+    previewLogo.alt = item.school;
+    previewBox.style.display = "flex";
+
+    const btnRect = btn.getBoundingClientRect();
+    const timelineRect = timelineContainer.getBoundingClientRect();
+
+    previewBox.style.left = `${btn.offsetLeft}px`;
+  });
+
+  btn.addEventListener("mouseleave", () => {
+    previewBox.style.display = "none";
+  });
+
   timelineContainer.appendChild(btn);
 });
 
@@ -153,10 +183,10 @@ function showEducationDetails(index) {
     li.textContent = line;
     listEl.appendChild(li);
   });
+
+  eduDetails.classList.add("visible");
 }
 
-// Affiche le premier par défaut
-showEducationDetails(0);
 
 
 // Projets
