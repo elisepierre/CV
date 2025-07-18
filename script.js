@@ -71,6 +71,13 @@ experiences.forEach(exp => {
     </div>
   `;
   container.appendChild(card);
+
+  // Active l’animation en rendant les cartes visibles
+  setTimeout(() => {
+    document.querySelectorAll('.experience-item').forEach(card => {
+      card.style.opacity = '1';
+    });
+  }, 100); 
 });
 
 // Effet flip au clic
@@ -88,17 +95,7 @@ function scrollCarousel(direction) {
     left: direction * scrollAmount,
     behavior: 'smooth'
   });
-
-// Apparition douce des sections
-const sections = document.querySelectorAll('.section');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-}, { threshold: 0.1 });
-sections.forEach(sec => observer.observe(sec));
+}
 
 // Projets
 const projects = {
@@ -123,4 +120,4 @@ function openProject(projectId) {
   document.getElementById('project-summary').textContent = project.summary;
   document.getElementById('project-link').href = project.link;
   document.getElementById('project-details').style.display = 'block';
-} 
+}
