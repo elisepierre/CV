@@ -313,7 +313,37 @@ header nav a:hover {
 .edu-details {
   margin-top: 30px;
   text-align: center;
+  display: none;
   animation: fadeIn 0.4s ease-in;
+}
+
+.edu-details.visible {
+  display: block;
+}
+
+.edu-preview {
+  position: absolute;
+  bottom: 100%;
+  transform: translateY(-10px);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.edu-preview img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.edu-preview span {
+  font-size: 0.9rem;
+  background: white;
+  padding: 2px 8px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 @keyframes fadeIn {
