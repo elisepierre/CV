@@ -151,9 +151,9 @@ header nav a:hover {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  justify-content: center;
+  scroll-behavior: smooth;
   gap: 20px;
-  padding: 20px 0;
+  padding: 1rem 0;
   scrollbar-width: none;
 }
 
@@ -166,11 +166,14 @@ header nav a:hover {
   width: 300px;
   height: 300px;
   perspective: 1000px;
+  scroll-snap-align: center;
   flex-shrink: 0;
   position: relative;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.5s ease;
   cursor: pointer;
+  opacity: 0;
 }
+
 .experience-item:hover {
   transform: scale(1.02);
   filter: brightness(1.05);
