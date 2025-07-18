@@ -176,8 +176,12 @@ educationData.forEach((item, index) => {
   previewBox.style.display = "flex";
   previewBox.style.left = `${btn.offsetLeft}px`;
 
+  previewLogo.onerror = function() {
+    console.warn("Logo non chargé :", previewLogo.src);
+  };
+
   console.log("Preview affichée avec logo:", item.logo);
-  });
+});
 
   btn.addEventListener("mouseleave", () => {
     previewBox.style.display = "none";
