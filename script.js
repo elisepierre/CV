@@ -161,12 +161,19 @@ educationData.forEach((item, index) => {
   btn.title = item.date;
 
   btn.addEventListener("click", () => {
-    // Ajoute/retire la classe 'selected'
-    buttons.forEach(b => b.classList.remove("selected"));
-    btn.classList.add("selected");
-
-    showEducationDetails(index);
+    titleEl.textContent = `${item.date} — ${item.title}`;
+    schoolEl.textContent = item.school;
+    listEl.innerHTML = "";
+    item.details.forEach(line => {
+      const div = document.createElement("div");
+      div.classList.add("edu-box");
+      div.textContent = line;
+      listEl.appendChild(div);
+    });
   });
+
+  timelineContainer.appendChild(btn);
+});
 
   // Gestion hover comme avant
   btn.addEventListener("mouseenter", () => {
