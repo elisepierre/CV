@@ -160,6 +160,7 @@ educationData.forEach((item, index) => {
   const btn = document.createElement("button");
   btn.title = item.date;
 
+  // Clic pour afficher les détails
   btn.addEventListener("click", () => {
     titleEl.textContent = `${item.date} — ${item.title}`;
     schoolEl.textContent = item.school;
@@ -172,30 +173,27 @@ educationData.forEach((item, index) => {
     });
   });
 
-  timelineContainer.appendChild(btn);
-});
-
-  // Gestion hover comme avant
+  // Hover pour afficher le logo et le titre
   btn.addEventListener("mouseenter", () => {
-  previewTitle.textContent = item.title;
-  previewLogo.src = item.logo;
-  previewLogo.alt = item.school;
-  previewBox.style.display = "flex";
-  previewBox.style.left = `${btn.offsetLeft}px`;
+    previewTitle.textContent = item.title;
+    previewLogo.src = item.logo;
+    previewLogo.alt = item.school;
+    previewBox.style.display = "flex";
+    previewBox.style.left = `${btn.offsetLeft}px`;
 
-  previewLogo.onerror = function() {
-    console.warn("Logo non chargé :", previewLogo.src);
-  };
+    previewLogo.onerror = function () {
+      console.warn("Logo non chargé :", previewLogo.src);
+    };
 
-  console.log("Preview affichée avec logo:", item.logo);
-});
+    console.log("Preview affichée avec logo:", item.logo);
+  });
 
   btn.addEventListener("mouseleave", () => {
     previewBox.style.display = "none";
   });
-  
+
   timelineContainer.appendChild(btn);
-  buttons.push(btn); // Ajoute au tableau
+  buttons.push(btn);
 });
 
 function showEducationDetails(index) {
