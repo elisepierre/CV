@@ -99,14 +99,25 @@ function scrollCarousel(direction) {
 
 const educationData = [
   {
-    date: "2023 - Présent",
-    title: "Cycle ingénieur",
-    school: "ISIMA - Clermont-Ferrand",
-    logo: "LOGO/isima.png", // Chemin vers l'image du logo
+    date: "2017 - 2020",
+    title: "Bac S",
+    school: "Lycée Henri Bergson - Angers",
+    logo: "LOGO/bergson.png", // Chemin vers l'image du logo
     details: [
       "Spécialité informatique et réseaux",
       "Projets web interactifs, IA, et gestion d'équipe",
       "Compétences : C, Python, HTML/CSS/JS, gestion de projet, UI/UX"
+    ]
+  },
+  {
+    date: "2020 - 2022",
+    title: "Classe Prépa PTSI-PT",
+    school: "Lycée Chevrollier - Angers",
+    logo: "LOGO/chevrollier.png",
+    details: [
+      "Spécialité Mathématiques",
+      "Engagement dans des activités associatives",
+      "Premiers projets de design (Canva, blogs)"
     ]
   },
   {
@@ -121,14 +132,14 @@ const educationData = [
     ]
   },
   {
-    date: "2020 - 2022",
-    title: "Classe Prépa PTSI-PT",
-    school: "Lycée Chevrollier - Angers",
-    logo: "LOGO/chevrollier.png",
+    date: "2023 - Présent",
+    title: "Cycle ingénieur",
+    school: "ISIMA - Clermont-Ferrand",
+    logo: "LOGO/isima.png", // Chemin vers l'image du logo
     details: [
-      "Spécialité Mathématiques",
-      "Engagement dans des activités associatives",
-      "Premiers projets de design (Canva, blogs)"
+      "Spécialité informatique et réseaux",
+      "Projets web interactifs, IA, et gestion d'équipe",
+      "Compétences : C, Python, HTML/CSS/JS, gestion de projet, UI/UX"
     ]
   }
 ];
