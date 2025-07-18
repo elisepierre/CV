@@ -99,10 +99,10 @@ function scrollCarousel(direction) {
 
 const educationData = [
   {
-    date: "2021 - Présent",
+    date: "2023 - Présent",
     title: "Cycle ingénieur",
     school: "ISIMA - Clermont-Ferrand",
-    logo: "img/isima.png", // Chemin vers l'image du logo
+    logo: "LOGO/isima.png", // Chemin vers l'image du logo
     details: [
       "Spécialité informatique et réseaux",
       "Projets web interactifs, IA, et gestion d'équipe",
@@ -110,10 +110,10 @@ const educationData = [
     ]
   },
   {
-    date: "2019 - 2021",
-    title: "Classe Prépa MPSI / MP",
-    school: "Lycée Clémenceau - Nantes",
-    logo: "img/clemenceau.png",
+    date: "2022 - 2023",
+    title: "Classe Prépa PT",
+    school: "Lycée Vaucanson - Tours",
+    logo: "LOGO/vaucanson.png",
     details: [
       "Maths, Physique, Informatique théorique",
       "Développement d'autonomie et rigueur",
@@ -121,10 +121,10 @@ const educationData = [
     ]
   },
   {
-    date: "2019",
-    title: "Baccalauréat Scientifique",
-    school: "Mention Très Bien",
-    logo: "img/bac.png",
+    date: "2020 - 2022",
+    title: "Classe Prépa PTSI-PT",
+    school: "Lycée Chevrollier - Angers",
+    logo: "LOGO/chevrollier.png",
     details: [
       "Spécialité Mathématiques",
       "Engagement dans des activités associatives",
