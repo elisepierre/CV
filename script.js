@@ -102,7 +102,7 @@ const educationData = [
     date: "2017 - 2020",
     title: "Bac S",
     school: "Lycée Henri Bergson - Angers",
-    logo: "LOGO/bergson.png", // Chemin vers l'image du logo
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/ISIMA_logo.svg/120px-ISIMA_logo.svg.png",
     details: [
       "Spécialité informatique et réseaux",
       "Projets web interactifs, IA, et gestion d'équipe",
