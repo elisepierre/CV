@@ -104,9 +104,9 @@ const educationData = [
     school: "Lycée Henri Bergson - Angers",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/ISIMA_logo.svg/120px-ISIMA_logo.svg.png",
     details: [
-      "Spécialité informatique et réseaux",
-      "Projets web interactifs, IA, et gestion d'équipe",
-      "Compétences : C, Python, HTML/CSS/JS, gestion de projet, UI/UX"
+      "Mention Très Bien",
+      "Spécialité Mathématiques",
+      "Engagement dans des activités associatives"
     ]
   },
   {
@@ -116,8 +116,8 @@ const educationData = [
     logo: "LOGO/chevrollier.png",
     details: [
       "Spécialité Mathématiques",
-      "Engagement dans des activités associatives",
-      "Premiers projets de design (Canva, blogs)"
+      "Premiers projets de design (Canva, blogs)",
+      "Développement personnel et autonomie"
     ]
   },
   {
@@ -127,7 +127,7 @@ const educationData = [
     logo: "LOGO/vaucanson.png",
     details: [
       "Maths, Physique, Informatique théorique",
-      "Développement d'autonomie et rigueur",
+      "Rigueur, logique et organisation",
       "Compétences : raisonnement logique, travail intensif, analyse"
     ]
   },
@@ -135,7 +135,7 @@ const educationData = [
     date: "2023 - Présent",
     title: "Cycle ingénieur",
     school: "ISIMA - Clermont-Ferrand",
-    logo: "LOGO/isima.png", // Chemin vers l'image du logo
+    logo: "LOGO/isima.png",
     details: [
       "Spécialité informatique et réseaux",
       "Projets web interactifs, IA, et gestion d'équipe",
@@ -144,6 +144,7 @@ const educationData = [
   }
 ];
 
+// Sélection des éléments DOM
 const timelineContainer = document.querySelector(".edu-timeline");
 const titleEl = document.getElementById("edu-title");
 const schoolEl = document.getElementById("edu-school");
@@ -154,26 +155,17 @@ const previewBox = document.getElementById("edu-preview");
 const previewTitle = document.getElementById("edu-hover-title");
 const previewLogo = document.getElementById("edu-logo");
 
-const buttons = []; // Nouveau : stocke tous les boutons
-
+// Création des boutons pour chaque expérience éducative
 educationData.forEach((item, index) => {
   const btn = document.createElement("button");
   btn.title = item.date;
 
   // Clic pour afficher les détails
   btn.addEventListener("click", () => {
-    titleEl.textContent = `${item.date} — ${item.title}`;
-    schoolEl.textContent = item.school;
-    listEl.innerHTML = "";
-    item.details.forEach(line => {
-      const div = document.createElement("div");
-      div.classList.add("edu-box");
-      div.textContent = line;
-      listEl.appendChild(div);
-    });
+    showEducationDetails(index);
   });
 
-  // Hover pour afficher le logo et le titre
+  // Hover pour prévisualiser
   btn.addEventListener("mouseenter", () => {
     previewTitle.textContent = item.title;
     previewLogo.src = item.logo;
@@ -181,11 +173,9 @@ educationData.forEach((item, index) => {
     previewBox.style.display = "flex";
     previewBox.style.left = `${btn.offsetLeft}px`;
 
-    previewLogo.onerror = function () {
+    previewLogo.onerror = function() {
       console.warn("Logo non chargé :", previewLogo.src);
     };
-
-    console.log("Preview affichée avec logo:", item.logo);
   });
 
   btn.addEventListener("mouseleave", () => {
@@ -193,24 +183,25 @@ educationData.forEach((item, index) => {
   });
 
   timelineContainer.appendChild(btn);
-  buttons.push(btn);
 });
 
+// Fonction pour afficher les détails éducatifs
 function showEducationDetails(index) {
   const data = educationData[index];
   titleEl.textContent = `${data.date} — ${data.title}`;
   schoolEl.textContent = data.school;
-  listEl.innerHTML = "";
+  listEl.innerHTML = ""; // Vider l'élément de détail
+
+  // Ajout des détails
   data.details.forEach(line => {
-    const li = document.createElement("li");
-    li.textContent = line;
-    listEl.appendChild(li);
+    const div = document.createElement("div");
+    div.classList.add("edu-box");
+    div.textContent = line;
+    listEl.appendChild(div);
   });
 
   eduDetails.classList.add("visible");
 }
-
-
 
 // Projets
 const projects = {
