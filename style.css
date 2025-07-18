@@ -148,7 +148,7 @@ header nav a:hover {
 .experience-slider {
   width: 960px;
   display: flex;
-  overflow-x: hidden;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   justify-content: center;
