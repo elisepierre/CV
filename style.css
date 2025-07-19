@@ -284,6 +284,23 @@ header nav a:hover {
   position: relative;
 }
 
+.edu-timeline-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-arrow {
+  position: absolute;
+  right: -30px; /* Ajuste selon ta mise en page */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: var(--white);
+  pointer-events: none;
+}
+
 .edu-timeline::before {
   content: "";
   position: absolute;
