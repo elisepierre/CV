@@ -188,11 +188,16 @@ educationData.forEach((item, index) => {
 // Fonction pour afficher les détails éducatifs
 function showEducationDetails(index) {
   const data = educationData[index];
+
+  // Met à jour les classes des boutons pour l'effet visuel
+  document.querySelectorAll(".edu-timeline button").forEach((btn, i) => {
+    btn.classList.toggle("selected", i === index);
+  });
+
   titleEl.textContent = `${data.date} — ${data.title}`;
   schoolEl.textContent = data.school;
-  listEl.innerHTML = ""; // Vider l'élément de détail
+  listEl.innerHTML = "";
 
-  // Ajout des détails
   data.details.forEach(line => {
     const div = document.createElement("div");
     div.classList.add("edu-box");
